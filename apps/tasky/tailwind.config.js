@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navColors:{
-          background: '#E8F4E3',
-          hoveredButtonBG:'#40A578',
-          hoveredButtonText: '#E6FF94',
-          textDefault: '#006769',
+        primary:{
+          50:'#E8F4E3',
+          100: '#E6FF94',
+          150: '#40A578',
+          200: '#006769',
         },
       },
     },
