@@ -1,0 +1,12 @@
+{
+  "name": "@istoria/typescript-config",
+  "version": "0.6.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write *.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
