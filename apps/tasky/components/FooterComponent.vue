@@ -1,5 +1,5 @@
 <template>
-    <div class="flex absolute bottom-0 h-28 w-full border-t-2 border-primary-150 justify-between bg-primary-50">
+    <div class="flex  h-28 w-full border-t-2 border-primary-150 justify-between bg-primary-50 z-10">
         <div class="flex pt-3 pl-4 gap-2">
             <img src="../public/navbarPictures/Tasky.jpg" class="w-20 h-20 p-4 self-center" style="border-radius:32px">
             <div class="flex flex-col pl-10 ">
