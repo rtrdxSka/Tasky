@@ -1,8 +1,8 @@
 <template>
     <div class="bg-navColors-background flex justify-between border-b-2 border-navColors-hoveredButtonBG">
         <div class="flex pl-10">
-            <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-3 rounded-3xl">
-            <button class="text-3xl self-center text-navColors-textDefault ">Tasky</button>
+            <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110" style="border-radius:32px">
+            <button class="text-3xl self-center text-navColors-textDefault font-roboto ">Tasky</button>
         </div>
         <div class="text-lg py-3 pr-4 text-navColors-textDefault">
             <button class="p-4 hover:text-navColors-hoveredButtonText hover:bg-navColors-hoveredButtonBG hover:rounded-xl">
