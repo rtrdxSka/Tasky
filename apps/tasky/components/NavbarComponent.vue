@@ -37,6 +37,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
+//index
 const indexNavbar = computed(() => {
     return route.name === 'index'
         ? 'border-index-200 bg-index-50'
@@ -53,6 +54,7 @@ const indexDefaultText = computed(() => {
         : '';
 })
 
+//about
 const aboutNavbar = computed (()=>{
     return route.name === 'about'
     ? 'border-about-150 bg-about-50'
