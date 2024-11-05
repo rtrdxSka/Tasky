@@ -1,17 +1,17 @@
 <template>
-    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10', indexFooter, aboutFooter, gettingStartedFooter]">
+    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10', indexFooter, aboutFooter, gettingStartedFooter, featuresFooter]">
         <div class="flex pt-3 pl-4 gap-2">
             <img src="../public/navbarPictures/Tasky.jpg" class="w-20 h-20 p-4 self-center" style="border-radius:32px">
             <div class="flex flex-col pl-10 ">
                 <p style="font-size:15px">Useful Information</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText]">Support</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Often asked questions</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Support</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Often asked questions</p>
             </div>
             <div class="flex flex-col pl-10">
                 <p style="font-size:15px">About us</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText]">About Tasky</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Careers</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Privacy & Policy</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">About Tasky</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Careers</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Privacy & Policy</p>
             </div>
             <div class="flex flex-col pl-10">
                 <p style="font-size:15px">Contacts</p>
@@ -74,6 +74,18 @@ const gettingStartedFooterText = computed(()=>{
 const gettingStartedFooter = computed(()=> {
     return route.name === 'getting-started'
     ? 'border-gettingStarted-200 bg-gettingStarted-50'
+    : ''
+})
+
+//features
+const featuresFooterText = computed(()=>{
+    return route.name === 'features'
+    ? 'hover:text-features-100'
+    : ''
+})
+const featuresFooter = computed(()=> {
+    return route.name === 'features'
+    ? 'border-features-200 bg-features-50'
     : ''
 })
 </script>

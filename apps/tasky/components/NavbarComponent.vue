@@ -1,5 +1,5 @@
 <template>
-    <div :class="['flex justify-between border-b-2 ', indexNavbar, aboutNavbar, gettingStartedNavbar]">
+    <div :class="['flex justify-between border-b-2 ', indexNavbar, aboutNavbar, gettingStartedNavbar, featuresNavbar]">
         <div class="flex pl-10">
             <a href="/">
                 <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110" style="border-radius:32px">
@@ -8,22 +8,22 @@
         </div>
         <div class="text-lg py-3 pr-4">
             <a href="/features">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Features
                 </button>
             </a>
             <a href="/getting-started">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Getting started
                 </button>
             </a>
             <a href="/about">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     About
                 </button>
             </a>
             <a href="/access/login">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Login
                 </button>
             </a>
@@ -85,6 +85,23 @@ const gettingStartedNavbarButtons = computed(()=>{
 const gettingStartedDefaultText = computed(()=>{
     return route.name === 'getting-started'
     ? 'text-gettingStarted-150'
+    : ''
+})
+
+//features
+const featuresNavbar = computed (()=>{
+    return route.name === 'features'
+    ? 'border-features-150 bg-features-50'
+    : ''
+})
+const featuresNavbarButtons = computed(()=>{
+    return route.name === 'features'
+    ? `${featuresDefaultText.value} hover:text-features-50 hover:bg-features-150`
+    : ''
+})
+const featuresDefaultText = computed(()=>{
+    return route.name === 'features'
+    ? 'text-features-150'
     : ''
 })
 </script>
