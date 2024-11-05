@@ -42,6 +42,4 @@ const indexDefaultText = computed(()=>{
     ? 'text-primary-200'
     : '';
 })
-
-
 </script>
