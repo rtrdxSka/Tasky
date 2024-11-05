@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <img src="../public/aboutImages/sakura.webp" class="absolute z-0">
+        <img src="../public/Unlogged/aboutImages/sakura.webp" class="absolute z-0">
         <div class="bg-about-50/50 flex flex-col w-screen justify-between pb-20 z-10 rounded-3xl">
             <h1 class="text-6xl pt-28 pl-20 text-about-200">
                 Who are we?
