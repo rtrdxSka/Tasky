@@ -1,5 +1,5 @@
 <template>
-    <div :class="['flex justify-between border-b-2 ', indexNavbar, aboutNavbar]">
+    <div :class="['flex justify-between border-b-2 ', indexNavbar, aboutNavbar, gettingStartedNavbar]">
         <div class="flex pl-10">
             <a href="/">
                 <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110" style="border-radius:32px">
@@ -8,22 +8,22 @@
         </div>
         <div class="text-lg py-3 pr-4">
             <a href="/features">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
                     Features
                 </button>
             </a>
             <a href="/getting-started">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
                     Getting started
                 </button>
             </a>
             <a href="/about">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
                     About
                 </button>
             </a>
             <a href="/access/login">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons]">
+                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons]">
                     Login
                 </button>
             </a>
@@ -68,6 +68,23 @@ const aboutNavbarButtons = computed(()=>{
 const aboutDefaultText = computed(()=>{
     return route.name === 'about'
     ? 'text-about-150'
+    : ''
+})
+
+//getting-started
+const gettingStartedNavbar = computed (()=>{
+    return route.name === 'getting-started'
+    ? 'border-gettingStarted-150 bg-gettingStarted-50'
+    : ''
+})
+const gettingStartedNavbarButtons = computed(()=>{
+    return route.name === 'getting-started'
+    ? `${gettingStartedDefaultText.value} hover:text-gettingStarted-50 hover:bg-gettingStarted-150`
+    : ''
+})
+const gettingStartedDefaultText = computed(()=>{
+    return route.name === 'getting-started'
+    ? 'text-gettingStarted-150'
     : ''
 })
 </script>

@@ -1,17 +1,17 @@
 <template>
-    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10', indexFooter, aboutFooter]">
+    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10', indexFooter, aboutFooter, gettingStartedFooter]">
         <div class="flex pt-3 pl-4 gap-2">
             <img src="../public/navbarPictures/Tasky.jpg" class="w-20 h-20 p-4 self-center" style="border-radius:32px">
             <div class="flex flex-col pl-10 ">
                 <p style="font-size:15px">Useful Information</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText]">Support</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText]">Often asked questions</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText]">Support</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Often asked questions</p>
             </div>
             <div class="flex flex-col pl-10">
                 <p style="font-size:15px">About us</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText]">About Tasky</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText]">Careers</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText]">Privacy & Policy</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText]">About Tasky</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Careers</p>
+                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText]">Privacy & Policy</p>
             </div>
             <div class="flex flex-col pl-10">
                 <p style="font-size:15px">Contacts</p>
@@ -62,6 +62,18 @@ const aboutFooterText = computed(()=>{
 const aboutFooter = computed(()=> {
     return route.name === 'about'
     ? 'border-about-200 bg-about-50'
+    : ''
+})
+
+//getting-started
+const gettingStartedFooterText = computed(()=>{
+    return route.name === 'getting-started'
+    ? 'hover:text-gettingStarted-100'
+    : ''
+})
+const gettingStartedFooter = computed(()=> {
+    return route.name === 'getting-started'
+    ? 'border-gettingStarted-200 bg-gettingStarted-50'
     : ''
 })
 </script>
