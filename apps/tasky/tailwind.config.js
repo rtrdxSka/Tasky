@@ -4,12 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary:{
+        index:{
           50:'#E8F4E3',
-          100: '#E6FF94',
-          150: '#40A578',
-          200: '#006769',
-          250: '#2C4A3E ',
+          100: '#E8F3E8',
+          150: '#E6FF94',
+          200: '#40A578',
+          250: '#006769',
+          300: '#2C4A3E ',
         },
         secondary:{
           50: '#E8F3E8',

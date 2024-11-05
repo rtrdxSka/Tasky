@@ -4,7 +4,7 @@
             <a href="/">
                 <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110" style="border-radius:32px">
             </a>
-            <button :class="['text-3xl self-center text-primary-200 font-roboto', indexDefaultText]">Tasky</button>
+            <button :class="['text-3xl self-center font-roboto', indexDefaultText]">Tasky</button>
         </div>
         <div class="text-lg py-3 pr-4">
             <a href="/features">
@@ -39,17 +39,17 @@ const route = useRoute();
 
 const indexNavbar = computed(() => {
     return route.name === 'index'
-        ? 'border-primary-150 bg-primary-50'
+        ? 'border-index-200 bg-index-50'
         : '';
 });
 const indexNavbarButtons = computed(() => {
     return route.name === 'index'
-        ? `${indexDefaultText.value} hover:text-primary-100 hover:bg-primary-150`
+        ? `${indexDefaultText.value} hover:text-index-150 hover:bg-index-200`
         : '';
 })
 const indexDefaultText = computed(() => {
     return route.name === 'index'
-        ? 'text-primary-200'
+        ? 'text-index-250'
         : '';
 })
 </script>

@@ -43,12 +43,12 @@ const route = useRoute();
 
 const indexFooterText = computed(()=>{
     return route.name === 'index'
-    ? 'hover:text-primary-150'
+    ? 'hover:text-index-200'
     : ''
 })
 const indexFooter = computed(()=>{
     return route.name === 'index'
-    ? 'border-primary-150 bg-primary-50'
+    ? 'border-index-200 bg-index-50'
     : ''
 })
 </script>
