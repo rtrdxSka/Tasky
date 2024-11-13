@@ -1,29 +1,38 @@
 <template>
-    <div :class="['flex justify-between border-b-2 ', indexNavbar, aboutNavbar, gettingStartedNavbar, featuresNavbar]">
-        <div class="flex pl-10">
+    <div
+        :class="['flex justify-between border-b-2 max-xl:flex-col max-xl:items-center max-xl:text-center', indexNavbar, aboutNavbar, gettingStartedNavbar, featuresNavbar]">
+        <div class="flex pl-10 max-xl:flex-col max-xl:px-0">
             <a href="/">
-                <img src="../public/navbarPictures/Tasky.jpg" class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110" style="border-radius:32px">
+                <img 
+                    src="../public/navbarPictures/Tasky.jpg"
+                    class="w-20 p-4 transition ease-in-out delay-150 duration-300 hover:scale-110"
+                    style="border-radius:32px">
             </a>
-            <button :class="['text-3xl self-center font-roboto text-about-150', indexDefaultText, aboutDefaultText]">Tasky</button>
+            <button
+                :class="['text-3xl self-center font-roboto text-about-150', indexDefaultText, aboutDefaultText]">Tasky</button>
         </div>
-        <div class="text-lg py-3 pr-4">
+        <div :class="['text-lg py-3 pr-4 max-xl:px-0']">
             <a href="/features">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
+                <button
+                    :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Features
                 </button>
             </a>
             <a href="/getting-started">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
+                <button
+                    :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Getting started
                 </button>
             </a>
             <a href="/about">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
+                <button
+                    :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     About
                 </button>
             </a>
             <a href="/access/login">
-                <button :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
+                <button
+                    :class="['p-4 hover:rounded-xl', indexNavbarButtons, aboutNavbarButtons, gettingStartedNavbarButtons, featuresNavbarButtons]">
                     Login
                 </button>
             </a>
@@ -55,53 +64,53 @@ const indexDefaultText = computed(() => {
 })
 
 //about
-const aboutNavbar = computed (()=>{
+const aboutNavbar = computed(() => {
     return route.name === 'about'
-    ? 'border-about-150 bg-about-50'
-    : ''
+        ? 'border-about-150 bg-about-50'
+        : ''
 })
-const aboutNavbarButtons = computed(()=>{
+const aboutNavbarButtons = computed(() => {
     return route.name === 'about'
-    ? `${aboutDefaultText.value} hover:text-about-50 hover:bg-about-150`
-    : ''
+        ? `${aboutDefaultText.value} hover:text-about-50 hover:bg-about-150`
+        : ''
 })
-const aboutDefaultText = computed(()=>{
+const aboutDefaultText = computed(() => {
     return route.name === 'about'
-    ? 'text-about-150'
-    : ''
+        ? 'text-about-150'
+        : ''
 })
 
 //getting-started
-const gettingStartedNavbar = computed (()=>{
+const gettingStartedNavbar = computed(() => {
     return route.name === 'getting-started'
-    ? 'border-gettingStarted-150 bg-gettingStarted-50'
-    : ''
+        ? 'border-gettingStarted-150 bg-gettingStarted-50'
+        : ''
 })
-const gettingStartedNavbarButtons = computed(()=>{
+const gettingStartedNavbarButtons = computed(() => {
     return route.name === 'getting-started'
-    ? `${gettingStartedDefaultText.value} hover:text-gettingStarted-50 hover:bg-gettingStarted-150`
-    : ''
+        ? `${gettingStartedDefaultText.value} hover:text-gettingStarted-50 hover:bg-gettingStarted-150`
+        : ''
 })
-const gettingStartedDefaultText = computed(()=>{
+const gettingStartedDefaultText = computed(() => {
     return route.name === 'getting-started'
-    ? 'text-gettingStarted-150'
-    : ''
+        ? 'text-gettingStarted-150'
+        : ''
 })
 
 //features
-const featuresNavbar = computed (()=>{
+const featuresNavbar = computed(() => {
     return route.name === 'features'
-    ? 'border-features-150 bg-features-50'
-    : ''
+        ? 'border-features-150 bg-features-50'
+        : ''
 })
-const featuresNavbarButtons = computed(()=>{
+const featuresNavbarButtons = computed(() => {
     return route.name === 'features'
-    ? `${featuresDefaultText.value} hover:text-features-50 hover:bg-features-150`
-    : ''
+        ? `${featuresDefaultText.value} hover:text-features-50 hover:bg-features-150`
+        : ''
 })
-const featuresDefaultText = computed(()=>{
+const featuresDefaultText = computed(() => {
     return route.name === 'features'
-    ? 'text-features-150'
-    : ''
+        ? 'text-features-150'
+        : ''
 })
 </script>
