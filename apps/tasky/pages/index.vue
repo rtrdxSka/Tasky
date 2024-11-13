@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-between bg-index-150/20">
+  <div class="flex w-full flex-col justify-between bg-index-150/20">
     <img src="../public/Unlogged/mainPictures/mainFlower.png" class="absolute z-0">
-    <div class="flex w-screen justify-between pb-64 pt-24 z-10 bg-index-50/60 rounded-3xl">
+    <div class="flex justify-between pb-64 pt-24 z-10 bg-index-50/60 rounded-3xl">
       <div class="z-10 pl-48 flex flex-col gap-12">
         <h1 class="text-6xl pt-24 text-index-300">Tasky</h1>
         <h2 class="w-96 text-4xl text-index-300"> Organize and complete daily tasks while contributing to a greener planet.
