@@ -1,17 +1,58 @@
 <template>
-    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10 max-xl:flex-col max-xl:items-center max-xl:h-full', indexFooter, aboutFooter, gettingStartedFooter, featuresFooter]">
+    <div :class="['flex  h-28 w-full border-t-2 justify-between z-10 max-xl:flex-col max-xl:items-center max-xl:h-full',
+    indexFooter,
+    aboutFooter,
+    gettingStartedFooter,
+    featuresFooter,
+    defaultFooter]">
         <div class="flex pt-3 pl-4 gap-2 max-xl:gap-10 max-xl:px-5">
             <img src="../public/navbarPictures/Tasky.jpg" class="w-20 h-20 p-4 self-center max-xl:hidden" style="border-radius:32px">
             <div class="flex flex-col pl-10 max-xl:p-0">
                 <p style="font-size:15px">Useful Information</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Support</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Often asked questions</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1',
+                indexFooterText,
+                aboutFooterText,
+                gettingStartedFooterText,
+                featuresFooterText,
+                defaultFooterText,
+                ]">
+                    Support</p>
+                <p :class="['text-xs hover:cursor-pointer',
+                indexFooterText,
+                aboutFooterText,
+                gettingStartedFooterText,
+                featuresFooterText,
+                defaultFooterText,
+                ]">
+                    Often asked questions</p>
             </div>
             <div class="flex flex-col pl-10 max-xl:p-0">
                 <p style="font-size:15px">About us</p>
-                <p :class="['text-xs hover:cursor-pointer pt-1', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">About Tasky</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Careers</p>
-                <p :class="['text-xs hover:cursor-pointer', indexFooterText, aboutFooterText, gettingStartedFooterText, featuresFooterText]">Privacy & Policy</p>
+                <p :class="['text-xs hover:cursor-pointer pt-1',
+                indexFooterText,
+                aboutFooterText,
+                gettingStartedFooterText,
+                featuresFooterText,
+                defaultFooterText,
+                defaultFooterText
+                ]">
+                    About Tasky</p>
+                <p :class="['text-xs hover:cursor-pointer',
+                indexFooterText,
+                aboutFooterText,
+                gettingStartedFooterText,
+                featuresFooterText,
+                defaultFooterText
+                ]">
+                    Careers</p>
+                <p :class="['text-xs hover:cursor-pointer',
+                indexFooterText,
+                aboutFooterText,
+                gettingStartedFooterText,
+                featuresFooterText,
+                defaultFooterText
+                ]">
+                    Privacy & Policy</p>
             </div>
             <div class="flex flex-col pl-10 max-xl:p-0">
                 <p style="font-size:15px">Contacts</p>
@@ -40,6 +81,7 @@ import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
 const route = useRoute();
+const routes = ['index', 'about', 'getting-started', 'features'] 
 
 //index
 const indexFooterText = computed(()=>{
@@ -88,4 +130,16 @@ const featuresFooter = computed(()=> {
     ? 'border-features-200 bg-features-50'
     : ''
 })
+
+//default
+const defaultFooterText = computed(() => {
+    return routes.some((r) => r === route.name)
+    ? ''
+    : 'hover:text-index-200';
+});
+const defaultFooter = computed(() => {
+    return routes.some((r) => r === route.name)
+    ? ''
+    : 'border-index-200 bg-index-50';
+});
 </script>
