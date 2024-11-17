@@ -5,7 +5,8 @@
         indexNavbar,
         aboutNavbar,
         gettingStartedNavbar,
-        featuresNavbar
+        featuresNavbar,
+        defaultNavbar,
     ]">
         <div class="flex items-center justify-between w-full lg:w-auto px-4 lg:px-10">
             <div class="flex items-center">
@@ -19,7 +20,8 @@
                 :class="[
                     'text-3xl self-center font-roboto text-about-150',
                     indexDefaultText,
-                    aboutDefaultText
+                    aboutDefaultText,
+                    defaultDefaultText
                 ]">
                     Tasky
                 </button>
@@ -55,7 +57,8 @@
                         indexNavbarButtons,
                         aboutNavbarButtons,
                         gettingStartedNavbarButtons,
-                        featuresNavbarButtons
+                        featuresNavbarButtons,
+                        defaultNavbarButtons
                     ]">
                         Features
                     </button>
@@ -67,7 +70,8 @@
                         indexNavbarButtons,
                         aboutNavbarButtons,
                         gettingStartedNavbarButtons,
-                        featuresNavbarButtons
+                        featuresNavbarButtons,
+                        defaultNavbarButtons
                     ]">
                         Getting started
                     </button>
@@ -79,7 +83,8 @@
                         indexNavbarButtons,
                         aboutNavbarButtons,
                         gettingStartedNavbarButtons,
-                        featuresNavbarButtons
+                        featuresNavbarButtons,
+                        defaultNavbarButtons
                     ]">
                         About
                     </button>
@@ -91,7 +96,8 @@
                         indexNavbarButtons,
                         aboutNavbarButtons,
                         gettingStartedNavbarButtons,
-                        featuresNavbarButtons
+                        featuresNavbarButtons,
+                        defaultNavbarButtons
                     ]">
                         Login
                     </button>
@@ -107,6 +113,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const isMenuOpen = ref(false);
+const routes = ['index', 'about', 'getting-started', 'features'] 
 
 onMounted(() => {
     window.addEventListener('click', (e: MouseEvent) => {
@@ -185,4 +192,22 @@ const featuresDefaultText = computed(() => {
     ? 'text-features-150'
     : '';
 });
+
+//default
+const defaultNavbar = computed(() => {
+    return routes.some((r) => r === route.name)
+    ? ''
+    : 'border-index-200 bg-index-50';
+});
+const defaultNavbarButtons = computed(() => {
+    return routes.some((r) => r === route.name)
+    ? ``
+    : `${indexDefaultText.value} hover:text-index-150 hover:bg-index-200`;
+});
+const defaultDefaultText = computed(() => {
+    return routes.some((r) => r === route.name)
+    ? ''
+    : 'text-index-250';
+});
+
 </script>
