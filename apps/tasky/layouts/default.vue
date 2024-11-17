@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col justify-between min-h-screen">
       <NavbarComponent/>
-      <div class="flex ">
+      <div class="flex">
         <slot/>
       </div>
       <FooterComponent/>
