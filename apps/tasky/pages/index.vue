@@ -1,6 +1,6 @@
 <template>
   <div class="flex w-full flex-col justify-between bg-index-150/20">
-    <img src="../public/Unlogged/mainPictures/mainFlower.png" class="absolute right-0 z-0">
+    <img src="../public/Unlogged/mainPictures/mainFlower.png" class="absolute right-0 z-0 max-lg:hidden">
     <div class="flex justify-between pb-64 pt-24 z-10 rounded-3xl max-xl:flex-col max-xl:pt-0 max-md:pb-48">
       <div class="z-10 pl-48 flex flex-col gap-12 max-xl:items-center max-xl:px-0 max-xl:text-center">
         <h1 class="text-6xl pt-24 text-index-300 max-md:text-5xl">Tasky</h1>
