@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col">
         <img src="../public/Unlogged/aboutImages/sakura.webp" class="absolute z-0 right-0">
-        <div class="bg-about-50/50 flex w-screen justify-between pb-20 z-10 rounded-3xl max-xl:flex-col max-xl:items-center max-xl:text-center">
+        <div class="bg-about-50/50 flex justify-between pb-20 z-10 rounded-3xl max-xl:flex-col max-xl:items-center max-xl:text-center">
             <div class="flex flex-col w-3/6 max-xl:w-screen">
                 <h1 class="text-4xl pt-28 pl-20 text-about-200 max-xl:px-0">
                     Who are we?
@@ -17,7 +17,7 @@
                 <img src="../public/Unlogged/aboutImages/ourTeam.webp" class="rounded-2xl">
             </div>
         </div>
-        <div class="bg-about-50/50 flex w-screen justify-between z-10 rounded-3xl max-xl:flex-col-reverse max-xl:items-center max-xl:text-center">
+        <div class="bg-about-50/50 flex justify-between z-10 rounded-3xl max-xl:flex-col-reverse max-xl:items-center max-xl:text-center">
             <div class="w-1/2 pt-28 px-40 max-xl:px-32 max-xl:pt-20 max-xl:w-screen max-md:px-20">
                 <img src="../public/Unlogged/aboutImages/missionAndVision.webp" class="rounded-2xl">
             </div>
@@ -31,7 +31,7 @@
                 </h2>
             </div>
         </div>
-        <div class="bg-about-50/50 flex w-screen justify-between pb-44 z-10 rounded-3xl max-xl:flex-col max-xl:items-center max-xl:text-center max-xl:pb-32">
+        <div class="bg-about-50/50 flex justify-between pb-44 z-10 rounded-3xl max-xl:flex-col max-xl:items-center max-xl:text-center max-xl:pb-32">
             <div class="flex flex-col w-3/6 max-xl:w-screen">
                 <h1 class="text-4xl pt-28 pl-20 text-about-200 max-xl:px-0 max-md:pt-20">
                     How It Works.
