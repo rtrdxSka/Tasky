@@ -29,7 +29,7 @@
           <h2 class="text-xl text-center pr-4 text-index-100">Cross-platform accessability.</h2>
         </div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col justify-center w-1/2 max-xl:w-screen">
         <img src="../public/Unlogged/mainPictures/laptop.webp" class="pr-32 pt-32 max-xl:px-24 max-md:px-5">
         <img src="../public/Unlogged/mainPictures/bush.png" class="absolute left-0 h-3/4 max-xl:h-3/6 max-md:pt-14">
       </div>
