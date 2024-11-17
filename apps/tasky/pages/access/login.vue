@@ -4,11 +4,11 @@
       <h1 class="pt-9 text-3xl">Login</h1>
       <div class="flex flex-col w-56 gap-2 pt-6">
         <h2 class="text-md">E-mail</h2>
-        <input class="rounded-lg h-7">
+        <input class="rounded-lg h-7 text-index-300 pl-2">
       </div>
       <div class="flex flex-col w-56 gap-2 pt-6">
         <h2 class="text-md">Password</h2>
-        <input class="rounded-lg h-7">
+        <input class="rounded-lg h-7 text-index-300 pl-2" type="password">
       </div>
       <div class="flex flex-col w-fit pt-9 ">
         <button class="bg-index-150 text-index-250 rounded px-5 text-xl pb-1">Login</button>
