@@ -38,7 +38,7 @@
 </template>
   
 <script lang="ts" setup>
-  import { ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const formData = ref({
@@ -55,13 +55,15 @@ const loginUser = async () => {
 
     const users = await response.json();
     const user = users.find(
-      (u: { email: string; password: string }) =>
+      (u: { id: number; email: string; password: string }) =>
         u.email === formData.value.email && u.password === formData.value.password
     );
 
     if (user) {
+      // Save user ID to local storage
+      localStorage.setItem('userId', user.id.toString());
       alert('Login successful!');
-      router.push('/tasks');
+      router.push('/tasks'); // Replace with your actual dashboard route
     } else {
       alert('Invalid email or password.');
     }
