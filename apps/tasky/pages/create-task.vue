@@ -1,6 +1,6 @@
 <template>
   <div class="task-create-container min-h-screen w-full flex items-center justify-center p-8">
-    <div class="flex flex-col md:flex-row gap-8 max-w-6xl w-full">
+    <div class="flex flex-col md:flex-row gap-8 max-w-6xl w-full z-10">
       <!-- Task Creation Form -->
       <div class="flex-1">
         <div class="task-form bg-emerald-500 rounded-xl p-8">
@@ -8,7 +8,7 @@
             {{ currentDateTime }}
           </div>
 
-          <form @submit.prevent="handleSubmit" class="space-y-6">
+          <form class="space-y-6" @submit.prevent="handleSubmit">
             <div>
               <label class="text-white block mb-2 text-lg">Header:</label>
               <input 
@@ -119,67 +119,104 @@
         </div>
       </div>
     </div>
+    <img src="../public/AccessImages/Access1.jpg" class="absolute z-0 rounded-xl w-72 left-16 top-2/3 max-xl:w-52 max-lg:hidden">
+    <img src="../public/AccessImages/Access2.jpg" class="absolute z-0 rounded-xl w-72 left-1/4 top-1/4 max-xl:w-52 max-lg:hidden">
+    <img src="../public/AccessImages/Access3.jpg" class="absolute z-0 rounded-xl w-72 right-1/4 top-2/3 max-xl:w-52 max-lg:hidden">
+    <img src="../public/AccessImages/Access4.jpg" class="absolute z-0 rounded-xl w-72 right-16 top-1/4 max-xl:w-52 max-lg:hidden">
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import dayjs from 'dayjs'
+import { ref, computed } from 'vue';
+import dayjs from 'dayjs';
 
 const taskForm = ref({
   header: '',
   description: ''
-})
+});
 
-const selectedDate = ref(dayjs().date())
-const selectedMonth = ref(dayjs().month())
-const selectedYear = ref(dayjs().year())
-const selectedHour = ref(12)
-const selectedMinute = ref(0)
-const selectedPeriod = ref('AM')
+const selectedDate = ref(dayjs().date());
+const selectedMonth = ref(dayjs().month());
+const selectedYear = ref(dayjs().year());
+const selectedHour = ref(12);
+const selectedMinute = ref(0);
+const selectedPeriod = ref('AM');
 
 const currentDateTime = computed(() => {
-  return dayjs().format('MM/DD/YYYY hh:mm A')
-})
+  return dayjs().format('MM/DD/YYYY hh:mm A');
+});
 
 const currentMonthYear = computed(() => {
-  return dayjs().year(selectedYear.value).month(selectedMonth.value).format('MMMM YYYY')
-})
+  return dayjs().year(selectedYear.value).month(selectedMonth.value).format('MMMM YYYY');
+});
 
 const daysInMonth = computed(() => {
-  return dayjs().year(selectedYear.value).month(selectedMonth.value).daysInMonth()
-})
+  return Array.from({ length: dayjs().year(selectedYear.value).month(selectedMonth.value).daysInMonth() }, (_, i) => i + 1);
+});
 
 const firstDayOfWeek = computed(() => {
-  return dayjs().year(selectedYear.value).month(selectedMonth.value).startOf('month').day()
-})
+  return dayjs().year(selectedYear.value).month(selectedMonth.value).startOf('month').day();
+});
 
 const isSelectedDate = (date) => {
   return (
     date === selectedDate.value &&
     selectedMonth.value === dayjs().month(selectedMonth.value).month() &&
     selectedYear.value === dayjs().year(selectedYear.value).year()
-  )
-}
+  );
+};
 
 const selectDate = (date) => {
-  selectedDate.value = date
-}
+  selectedDate.value = date;
+};
 
 const changeMonth = (direction) => {
-  const newDate = dayjs().year(selectedYear.value).month(selectedMonth.value).add(direction, 'month')
-  selectedMonth.value = newDate.month()
-  selectedYear.value = newDate.year()
-}
+  const newDate = dayjs().year(selectedYear.value).month(selectedMonth.value).add(direction, 'month');
+  selectedMonth.value = newDate.month();
+  selectedYear.value = newDate.year();
+};
 
-const handleSubmit = () => {
-  const formattedTime = `${selectedHour.value}:${selectedMinute.value.toString().padStart(2, '0')} ${selectedPeriod.value}`
-  console.log('Form submitted:', {
-    ...taskForm.value,
-    date: `${selectedYear.value}-${selectedMonth.value + 1}-${selectedDate.value}`,
+const handleSubmit = async () => {
+  const userId = localStorage.getItem('userId');
+  const formattedTime = `${selectedHour.value}:${selectedMinute.value.toString().padStart(2, '0')} ${selectedPeriod.value}`;
+  const newTask = {
+    header: taskForm.value.header,
+    description: taskForm.value.description,
+    date: `${selectedYear.value}-${(selectedMonth.value + 1).toString().padStart(2, '0')}-${selectedDate.value.toString().padStart(2, '0')}`,
     time: formattedTime,
-  })
-}
+    userId: userId // Include user ID
+  };
+
+  try {
+    const response = await fetch('http://localhost:3030/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newTask),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to add task: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    console.log('Task successfully added:', data);
+
+    // Reset form after successful submission
+    taskForm.value.header = '';
+    taskForm.value.description = '';
+  } catch (error) {
+    console.error('Error adding task:', error);
+  }
+};
+onMounted(() => {
+  const userId = localStorage.getItem('userId');
+  const router = useRouter();
+  if (!userId) {
+    router.push('/');
+  return
+}})
 </script>
 
 <style scoped>
