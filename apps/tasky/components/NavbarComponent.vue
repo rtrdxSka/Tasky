@@ -102,6 +102,19 @@
                         Login
                     </button>
                 </NuxtLink>
+                <NuxtLink to="/tasks">
+                    <button 
+                    :class="[
+                        'p-4 hover:rounded-xl w-full',
+                        indexNavbarButtons,
+                        aboutNavbarButtons,
+                        gettingStartedNavbarButtons,
+                        featuresNavbarButtons,
+                        defaultNavbarButtons
+                    ]">
+                        Tasks
+                    </button>
+                </NuxtLink>
             </div>
         </div>
     </div>
@@ -113,7 +126,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const isMenuOpen = ref(false);
-const routes = ['index', 'about', 'getting-started', 'features'] 
+const routes = ['index', 'about', 'getting-started', 'features','tasks'] 
 
 onMounted(() => {
     window.addEventListener('click', (e: MouseEvent) => {
