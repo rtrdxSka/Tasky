@@ -102,19 +102,6 @@
                         Login
                     </button>
                 </NuxtLink>
-                <NuxtLink to="/tasks">
-                    <button 
-                    :class="[
-                        'p-4 hover:rounded-xl w-full',
-                        indexNavbarButtons,
-                        aboutNavbarButtons,
-                        gettingStartedNavbarButtons,
-                        featuresNavbarButtons,
-                        defaultNavbarButtons
-                    ]">
-                        Tasks
-                    </button>
-                </NuxtLink>
             </div>
         </div>
     </div>
