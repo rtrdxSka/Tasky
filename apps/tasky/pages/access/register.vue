@@ -90,8 +90,6 @@ const registerUser = async () => {
     });
 
     if (!response.ok) throw new Error("Failed to register.");
-
-    alert("Registration successful!");
     router.push('/access/login');
   } catch (error) {
     console.error(error);
