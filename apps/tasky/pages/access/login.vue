@@ -2,7 +2,7 @@
   <div class="flex w-full flex-col bg-index-150/20 items-center justify-center h-screen">
     <div class="bg-index-250 text-index-50 w-80 rounded-md pl-8 z-10">
       <h1 class="pt-9 text-3xl">Login</h1>
-      <form @submit.prevent="loginUser" class="flex flex-col gap-6">
+      <form class="flex flex-col gap-5" @submit.prevent="loginUser" >
         <div class="flex flex-col w-56 gap-2">
           <label for="email" class="text-md">E-mail</label>
           <input
@@ -23,11 +23,12 @@
             required
           />
         </div>
-        <div class="flex flex-col w-fit pt-4">
+        <div class="flex flex-col w-fit">
           <button type="submit" class="bg-index-150 text-index-250 rounded px-5 text-xl pb-1">
             Login
           </button>
         </div>
+        <h2 class="pb-10">Don't have an account? Register <NuxtLink to="/access/register" class="text-index-150">here!</NuxtLink></h2>
       </form>
     </div>
     <img src="../../public/AccessImages/Access1.jpg" class="absolute z-0 rounded-xl w-72 left-16 top-2/3 max-xl:w-52 max-lg:hidden">
@@ -62,8 +63,9 @@ const loginUser = async () => {
     if (user) {
       // Save user ID to local storage
       localStorage.setItem('userId', user.id.toString());
-      alert('Login successful!');
-      router.push('/tasks'); // Replace with your actual dashboard route
+      router.push('/tasks').then(() => {
+        location.reload(); // Refresh the page after navigation
+      });
     } else {
       alert('Invalid email or password.');
     }
