@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "23d5",
+      "username": "Test",
+      "email": "test@gmail.com",
+      "password": "test123@"
+    },
+    {
+      "id": "7365",
+      "username": "test",
+      "email": "test123@gmail.com",
+      "password": "test123@"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "a9b3",
+      "header": "test",
+      "description": "test",
+      "date": "2024-12-21",
+      "time": "12:00 AM",
+      "userId": "23d5"
+    }
+  ]
+}
