@@ -1,16 +1,16 @@
 <template>
   <div class="task-create-container min-h-screen w-full flex items-center justify-center p-8">
-    <div class="flex flex-col md:flex-row gap-8 max-w-6xl w-full z-10">
+    <div class="flex flex-col md:flex-row gap-8 max-w-6xl w-full z-10 items-center">
       <!-- Task Creation Form -->
       <div class="flex-1">
         <div class="task-form bg-emerald-500 rounded-xl p-8">
-          <div class="text-white text-lg mb-8">
+          <div class="text-white text-lg">
             {{ currentDateTime }}
           </div>
 
           <form class="space-y-6" @submit.prevent="handleSubmit">
             <div>
-              <label class="text-white block mb-2 text-lg">Header:</label>
+              <label class="text-white block text-lg">Header:</label>
               <input 
                 v-model="taskForm.header"
                 type="text"
@@ -20,17 +20,17 @@
             </div>
 
             <div>
-              <label class="text-white block mb-2 text-lg">Description:</label>
+              <label class="text-white block text-lg">Description:</label>
               <textarea 
                 v-model="taskForm.description"
                 rows="6"
-                class="form-textarea w-full px-4 py-3 rounded-lg bg-white/90 
+                class="form-textarea w-full px-4 rounded-lg bg-white/90 
                        focus:ring-2 focus:ring-white/50 focus:outline-none"
               />
             </div>
 
             <div>
-              <label class="text-white block mb-2 text-lg">Select Time:</label>
+              <label class="text-white block text-lg">Select Time:</label>
               <div class="flex gap-4">
                 <select 
                   v-model="selectedHour"
@@ -71,8 +71,8 @@
 
       <!-- Calendar Section -->
       <div class="flex-1">
-        <div class="calendar-container bg-gray-900 rounded-xl p-8">
-          <div class="flex justify-between items-center mb-8">
+        <div class="calendar-container bg-gray-900 rounded-xl p-10">
+          <div class="flex justify-between items-center">
             <button 
               class="text-white hover:bg-gray-700 p-3 rounded-full"
               @click="changeMonth(-1)"
@@ -218,26 +218,3 @@ onMounted(() => {
   return
 }})
 </script>
-
-<style scoped>
-.task-create-container {
-  min-height: calc(100vh - 64px);
-  background-color: rgb(236 253 245 / 0.05);
-}
-
-.form-input,
-.form-textarea,
-.form-select {
-  border: none;
-  color: #1f2937;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: #6b7280;
-}
-
-.calendar-day {
-  transition: background-color 0.2s ease;
-}
-</style>
