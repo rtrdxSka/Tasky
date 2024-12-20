@@ -5,24 +5,22 @@
       "username": "Test",
       "email": "test@gmail.com",
       "password": "test123@"
+    },
+    {
+      "id": "7365",
+      "username": "test",
+      "email": "test123@gmail.com",
+      "password": "test123@"
     }
   ],
   "tasks": [
     {
-      "id": "7d39",
-      "header": "Test",
-      "description": "Test",
-      "date": "2024-12-20",
-      "time": "12:30 AM",
-      "userId": "23d5"
-    },
-    {
-      "id": "939e",
-      "header": "",
-      "description": "",
-      "date": "2024-12-19",
+      "id": "a9b3",
+      "header": "test",
+      "description": "test",
+      "date": "2024-12-21",
       "time": "12:00 AM",
-      "userId": null
+      "userId": "23d5"
     }
   ]
 }
