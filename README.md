@@ -1,3 +1,11 @@
+# JSON-web-server
+
+Run the following command
+
+```sh
+npm run json-server
+```
+
 # Turborepo starter
 
 This is an official starter Turborepo.
